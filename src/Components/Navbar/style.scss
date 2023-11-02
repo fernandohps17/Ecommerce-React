@@ -1,0 +1,26 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.nav_section {
+    display: flex;
+    gap: 20px;
+
+    li {
+        list-style: none;
+        text-decoration: none !important;
+    }
+}
+
+.nav_section_link {
+    text-decoration: none;
+    color: gray;
+}
+
+.nav_section_link_logo {
+    color: black;
+    text-decoration: none;
+}
