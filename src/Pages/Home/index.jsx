@@ -1,10 +1,11 @@
+// Import Component
+import { Layout } from "../../Components/Layout"
+
 export const Home = () => {
 
     return (
-        <div className="container">
-            <div className="content">
-                <h1>Home</h1>
-            </div>
-        </div>
+        <Layout>
+            <h1 className="title">HOME</h1>
+        </Layout>
     )
 }
