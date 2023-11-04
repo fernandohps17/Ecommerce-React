@@ -7,16 +7,18 @@ import { Navbar } from '../../Components/Navbar';
 
 // Import CSS
 import './style.scss';
-import { Card } from '../../Components/Card';
+import { ShoppingCartProvider } from '../../Context';
 
 function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        <AppRoutes />
-      </BrowserRouter>
+      <ShoppingCartProvider>
+        <BrowserRouter>
+          <Navbar />
+          <AppRoutes />
+        </BrowserRouter>
+      </ShoppingCartProvider>
     </>
   )
 }
