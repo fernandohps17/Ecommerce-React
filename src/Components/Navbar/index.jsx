@@ -1,10 +1,16 @@
 // Import dependencias de React
 import { NavLink } from "react-router-dom"
+import { useContext } from "react";
+
+// Import Estado global
+import { ShoppingCartContext } from "../../Context";
 
 // Import CSS
 import './style.scss';
 
 export const Navbar = () => {
+
+    const context = useContext(ShoppingCartContext)
 
     // const activeStyle = 'line'
     const activeStyle = {
@@ -31,7 +37,7 @@ export const Navbar = () => {
                         <li><NavLink className='nav_section_link' style={({ isActive }) => isActive ? activeStyle : undefined} to='/my-orders'>My Orders</NavLink></li>
                         <li><NavLink className='nav_section_link' style={({ isActive }) => isActive ? activeStyle : undefined} to='/my-account'>My Account</NavLink></li>
                         <li><NavLink className='nav_section_link' style={({ isActive }) => isActive ? activeStyle : undefined} to='/sing-in'>Sing In</NavLink></li>
-                        <li>🛒 0</li>
+                        <li>🛒 {context.count}</li>
                     </ul>
                 </nav>
             </div>

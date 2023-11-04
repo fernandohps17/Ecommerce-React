@@ -1,12 +1,20 @@
-// import CSS
+// Import CSS
 import './style.scss';
 
+// Import dependencias de react
+import { useContext } from 'react';
+
+// Import estado global
+import { ShoppingCartContext } from '../../Context';
+
 export const Card = (data) => {
+
+    const context = useContext(ShoppingCartContext)
 
     return (
         <div className='card'>
             <figure className='card_figure'>
-                <div className='card_figure_add'>+</div>
+                <div className='card_figure_add' onClick={() => context.setCount(context.count + 1)}>+</div>
                 <img src={data.data.images[0]} alt={data.data.title} />
                 <span className='card_figure_category'>{data.data.category.name}</span>
             </figure>
