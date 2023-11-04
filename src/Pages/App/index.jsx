@@ -16,11 +16,6 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <AppRoutes />
-        <div className='container'>
-          <div className='content'>
-            <Card />
-          </div>
-        </div>
       </BrowserRouter>
     </>
   )
