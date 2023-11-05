@@ -3,4 +3,16 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
     margin: 70px 0;
+
+    @media screen and (max-width: 1550px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (max-width: 1150px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: 800px) {
+        grid-template-columns: 1fr;
+    }
 }

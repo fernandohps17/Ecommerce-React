@@ -8,6 +8,7 @@ import { Card } from "../../Components/Card"
 
 // Import CSS
 import './style.scss';
+import { ProductDetail } from "../../Components/ProductDetail";
 
 export const Home = () => {
 
@@ -20,15 +21,19 @@ export const Home = () => {
     }, [])
 
     return (
-        <Layout>
-            <h1 className="title">HOME</h1>
-            <div className="card_grid">
-                {
-                    items?.map(item => (
-                        <Card data={item} key={item.id} />
-                    ))
-                }
-            </div>
-        </Layout>
+        <div>
+
+            <Layout>
+                <h1 className="title">HOME</h1>
+                <div className="card_grid">
+                    {
+                        items?.map(item => (
+                            <Card data={item} key={item.id} />
+                        ))
+                    }
+                </div>
+            </Layout>
+            <ProductDetail />
+        </div>
     )
 }
