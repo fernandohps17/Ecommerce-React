@@ -14,8 +14,13 @@ export const Card = (data) => {
 
     const context = useContext(ShoppingCartContext)
 
+    const showProduct = (productDetail) => {
+        context.openProductDetail()
+        context.setProductToShow(productDetail)
+    }
+
     return (
-        <div className='card' onClick={() => context.openProductDetail()}>
+        <div className='card' onClick={() => showProduct(data.data)}>
             <figure className='card_figure'>
                 <div className='card_figure_add' onClick={() => context.setCount(context.count + 1)}><PlusSmallIcon /></div>
                 <img src={data.data.images[0]} alt={data.data.title} />
