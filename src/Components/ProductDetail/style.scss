@@ -8,6 +8,12 @@
     position: fixed;
     right: 0;
     top: 100px;
+    cursor: pointer;
+    display: none;
+}
+
+.flex {
+    display: block;
 }
 
 .product_detail_title {

@@ -1,3 +1,9 @@
+// Import React
+import { useContext } from 'react'
+
+// Import Context
+import { ShoppingCartContext } from '../../Context'
+
 // Import Iconos heroicos
 import { XMarkIcon } from '@heroicons/react/24/solid'
 
@@ -6,13 +12,14 @@ import './style.scss'
 
 export const ProductDetail = () => {
 
+    const context = useContext(ShoppingCartContext)
+
     return (
-        <aside className='product_detail'>
+        <aside className={`${context.isProductDetailOpen ? 'flex' : ''} product_detail`}>
             <div className='product_detail_title'>
                 <h1>Product Detail</h1>
-                <p className='product_detail_close'><XMarkIcon /></p>
+                <p className='product_detail_close' onClick={() => context.closeProductDetail()}><XMarkIcon /></p>
             </div>
-
         </aside>
     )
 
