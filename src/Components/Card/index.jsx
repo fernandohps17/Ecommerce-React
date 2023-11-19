@@ -16,20 +16,23 @@ export const Card = (data) => {
 
     const showProduct = (productDetail) => {
         context.openProductDetail()
+        context.closeChekoutSideMenu()
         context.setProductToShow(productDetail)
     }
 
     // funcion para agregar el product al dar click en el icono plus
-    const addProductsToCart = (productData) => {
+    const addProductsToCart = (event, productData) => {
+        event.stopPropagation()
         context.setCount(context.count + 1)
         context.setCartProducts([...context.cartProducts, productData])
-        console.log( 'cart:', context.cartProducts)
+        context.openChekoutSideMenu()
+        context.closeProductDetail()
     }
 
     return (
         <div className='card' onClick={() => showProduct(data.data)}>
             <figure className='card_figure'>
-                <div className='card_figure_add' onClick={() => addProductsToCart(data.data)}><PlusSmallIcon /></div>
+                <div className='card_figure_add' onClick={(event) => addProductsToCart(event, data.data)}><PlusSmallIcon /></div>
                 <img src={data.data.images[0]} alt={data.data.title} />
                 <span className='card_figure_category'>{data.data.category.name}</span>
             </figure>
@@ -40,3 +43,5 @@ export const Card = (data) => {
         </div>
     )
 }
+
+// clase 17
