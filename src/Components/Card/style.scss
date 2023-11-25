@@ -43,6 +43,28 @@
     }
 }
 
+.card_figure_add_check {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background: #3bab3b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 1s ease;
+    box-shadow: 2px 2px 5px gray;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
 .card_figure_category {
     background: #c1c1c1d3;
     padding: 5px 15px;

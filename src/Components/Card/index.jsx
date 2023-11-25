@@ -1,5 +1,6 @@
 // Import Iconos heroicos
 import { PlusSmallIcon } from '@heroicons/react/24/solid'
+import { CheckIcon } from '@heroicons/react/24/solid'
 
 // Import CSS
 import './style.scss';
@@ -29,10 +30,26 @@ export const Card = (data) => {
         context.closeProductDetail()
     }
 
+    const renderIcon = (id) => {
+
+        const isInCart = context.cartProducts.filter(product => product.id === id).length > 0
+
+        if (isInCart) {
+            return (
+                <div className='card_figure_add_check'><CheckIcon /></div>
+            )
+        } else {
+            return (
+                <div className='card_figure_add' onClick={(event) => addProductsToCart(event, data.data)}><PlusSmallIcon /></div>
+            )
+        }
+
+    }
+
     return (
         <div className='card' onClick={() => showProduct(data.data)}>
             <figure className='card_figure'>
-                <div className='card_figure_add' onClick={(event) => addProductsToCart(event, data.data)}><PlusSmallIcon /></div>
+                {renderIcon(data.data.id)}
                 <img src={data.data.images[0]} alt={data.data.title} />
                 <span className='card_figure_category'>{data.data.category.name}</span>
             </figure>
