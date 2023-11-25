@@ -3,7 +3,7 @@ import './style.scss';
 
 export const OrderCard = props => {
 
-    const { id, title, imageUrl, price } = props
+    const { id, title, imageUrl, price, handleDelete } = props
 
     return (
         <div>
@@ -18,7 +18,7 @@ export const OrderCard = props => {
 
                 <div className="order_card_botton">
                     <p><b>Precio:</b> {price}$</p>
-                    <XMarkIcon className="order_card_bottom_icon"></XMarkIcon>
+                    <XMarkIcon className="order_card_bottom_icon" onClick={() => handleDelete(id)}></XMarkIcon>
                 </div>
             </div>
         </div>

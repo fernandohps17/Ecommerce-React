@@ -14,7 +14,11 @@ import './style.scss'
 export const CheckoutSideMenu = () => {
 
     const context = useContext(ShoppingCartContext)
-    console.log(context.cartProducts)
+    
+    const handleDelete = (id) => {
+        const filteredProducts = context.cartProducts.filter(product => product.id != id)
+        context.setCartProducts(filteredProducts)
+    }
 
     return (
         <aside className={`${context.isChekoutSideMenuOpen ? 'flex' : ''} checkout_side_menu`}>
@@ -32,6 +36,7 @@ export const CheckoutSideMenu = () => {
                             title={product.title}
                             imageUrl={product.images}
                             price={product.price}
+                            handleDelete={handleDelete}
                         />
                     ))
                 }
