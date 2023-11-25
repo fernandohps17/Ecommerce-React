@@ -43,5 +43,3 @@ export const Card = (data) => {
         </div>
     )
 }
-
-// clase 17
