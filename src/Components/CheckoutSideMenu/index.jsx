@@ -4,6 +4,7 @@ import { useContext } from 'react'
 // Import Component
 import { ShoppingCartContext } from '../../Context'
 import { OrderCard } from '../OrderCard'
+import { totalPrice } from '../../utils'
 
 // Import Iconos heroicos
 import { XMarkIcon } from '@heroicons/react/24/solid'
@@ -41,6 +42,14 @@ export const CheckoutSideMenu = () => {
                     ))
                 }
             </div>
+
+            <div className='checkout_side_menu_total_price'>
+                <p className='checkout_side_menu_total_price_content'>
+                    <span><b>Total Products:</b></span>
+                    <span>{totalPrice(context.cartProducts)}$</span>
+                </p>
+            </div>
+
         </aside>
     )
 
