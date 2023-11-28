@@ -74,3 +74,26 @@
     display: flex;
     justify-content: space-between;
 }
+
+.checkout_side_menu_btn {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-top: 20px;
+
+    button {
+        padding: 10px;
+        border: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px #c1c1c1;
+        cursor: pointer;
+        transition: 1s ease;
+        
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+}

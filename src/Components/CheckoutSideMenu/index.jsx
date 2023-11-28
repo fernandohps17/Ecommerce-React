@@ -22,6 +22,19 @@ export const CheckoutSideMenu = () => {
         context.setCount(context.count - 1)
     }
 
+    const handleCheckout = () => {
+        const orderToAdd = {
+            date: '01.02.23',
+            products: context.cartProducts,
+            totalProducts: context.cartProducts.length,
+            totalPrice: totalPrice(context.cartProducts)
+        }
+
+        context.setOrder([...context.order, orderToAdd])
+        context.setCartProducts([])
+        context.setCount(context.count = 0)
+    }
+
     return (
         <aside className={`${context.isChekoutSideMenuOpen ? 'flex' : ''} checkout_side_menu`}>
 
@@ -50,6 +63,11 @@ export const CheckoutSideMenu = () => {
                     <span><b>Total Products:</b></span>
                     <span>{totalPrice(context.cartProducts)}$</span>
                 </p>
+
+                <div className='checkout_side_menu_btn'>
+                    <button onClick={() => handleCheckout()}>Checkout</button>
+                </div>
+
             </div>
 
         </aside>
