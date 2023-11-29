@@ -4,7 +4,7 @@ export const MyAccount = () => {
 
     return (
         <Layout>
-            MyAccount
+            <h1 className="title">My Account</h1>
         </Layout>
     )
 }

@@ -80,6 +80,7 @@
     justify-content: end;
     align-items: center;
     padding-top: 20px;
+    text-decoration: none;
 
     button {
         padding: 10px;
@@ -90,7 +91,7 @@
         box-shadow: 2px 2px 5px #c1c1c1;
         cursor: pointer;
         transition: 1s ease;
-        
+
         &:hover {
             transform: scale(1.05);
         }

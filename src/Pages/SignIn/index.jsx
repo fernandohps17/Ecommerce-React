@@ -4,7 +4,7 @@ export const SignIn = () => {
 
     return (
         <Layout>
-            Sign In
+            <h1 className="title">Sign In</h1>
         </Layout>
     )
 }

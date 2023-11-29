@@ -4,7 +4,7 @@ export const NotFound = () => {
 
     return (
         <Layout>
-            NotFound
+            <h1 className="title">Not Found</h1>
         </Layout>
     )
 }

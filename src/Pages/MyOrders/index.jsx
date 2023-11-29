@@ -4,7 +4,7 @@ export const MyOrders = () => {
 
     return (
         <Layout>
-            MyOrders
+            <h1 className="title">My Orders</h1>
         </Layout>
     )
 }

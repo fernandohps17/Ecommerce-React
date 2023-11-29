@@ -5,6 +5,11 @@ export const OrderCard = props => {
 
     const { id, title, imageUrl, price, handleDelete } = props
 
+    let renderXMarkIcon
+    if (handleDelete) {
+        renderXMarkIcon = <XMarkIcon className="order_card_bottom_icon" onClick={() => handleDelete(id)}></XMarkIcon>
+    }
+
     return (
         <div>
             <div className="order_card">
@@ -15,10 +20,9 @@ export const OrderCard = props => {
 
                     <p className="order_card_top_title"><b>Titulo:</b> {title}</p>
                 </div>
-
                 <div className="order_card_botton">
                     <p><b>Precio:</b> {price}$</p>
-                    <XMarkIcon className="order_card_bottom_icon" onClick={() => handleDelete(id)}></XMarkIcon>
+                    {renderXMarkIcon}
                 </div>
             </div>
         </div>
