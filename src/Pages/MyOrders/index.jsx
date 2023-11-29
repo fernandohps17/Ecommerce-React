@@ -15,16 +15,14 @@ export const MyOrders = () => {
                 <h1 className="title">My Orders</h1>
             </div>
             {
-                context.order.map((order, index) => {
-                    <Link key={index} to={`/my-orders/${order.id}`}>
+                context.order.map((index) => (
+                    <Link key={index} to={`/my-orders/${index}`}>
                         <OrderCard 
                             totalPrice={order.totalPrice} 
                             totalProducts={order.totalProducts} />
                     </Link>
-                })
+                ))
             }
         </Layout>
     )
 }
-
-// clase 24
