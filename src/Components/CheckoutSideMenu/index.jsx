@@ -35,6 +35,7 @@ export const CheckoutSideMenu = () => {
         context.setCartProducts([])
         context.setCount(context.count = 0)
         context.closeChekoutSideMenu()
+        context.setSearchByTitle(null)
     }
 
     return (

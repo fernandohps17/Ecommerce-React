@@ -25,11 +25,11 @@ export const Navbar = () => {
                     <ul className="nav_section">
                         <li><NavLink className='nav_section_link_logo' to='/'><b>Shopi</b></NavLink></li>
                         <li><NavLink className='nav_section_link' style={({ isActive }) => isActive ? activeStyle : undefined} to='/'>All</NavLink></li>
-                        <li><NavLink className='nav_section_link' style={({ isActive }) => isActive ? activeStyle : undefined} to='/clothes'>Clothes</NavLink></li>
-                        <li><NavLink className='nav_section_link' style={({ isActive }) => isActive ? activeStyle : undefined} to='/electronics'>Electronics</NavLink></li>
-                        <li><NavLink className='nav_section_link' style={({ isActive }) => isActive ? activeStyle : undefined} to='/furnitures'>Furnitures</NavLink></li>
-                        <li><NavLink className='nav_section_link' style={({ isActive }) => isActive ? activeStyle : undefined} to='/toys'>Toys</NavLink></li>
-                        <li><NavLink className='nav_section_link' style={({ isActive }) => isActive ? activeStyle : undefined} to='/others'>Others</NavLink></li>
+                        <li><NavLink className='nav_section_link' style={({ isActive }) => isActive ? activeStyle : undefined} to='/clothes' onClick={() => context.setSearchByCategory('clothes')}>Clothes</NavLink></li>
+                        <li><NavLink className='nav_section_link' style={({ isActive }) => isActive ? activeStyle : undefined} to='/electronics' onClick={() => context.setSearchByCategory('electronics')}>Electronics</NavLink></li>
+                        <li><NavLink className='nav_section_link' style={({ isActive }) => isActive ? activeStyle : undefined} to='/furnitures' onClick={() => context.setSearchByCategory('Furnitures')}>Furnitures</NavLink></li>
+                        <li><NavLink className='nav_section_link' style={({ isActive }) => isActive ? activeStyle : undefined} to='/toys' onClick={() => context.setSearchByCategory('toys')}>Toys</NavLink></li>
+                        <li><NavLink className='nav_section_link' style={({ isActive }) => isActive ? activeStyle : undefined} to='/others' onClick={() => context.setSearchByCategory('others')}>Others</NavLink></li>
                     </ul>
 
                     <ul className="nav_section">
