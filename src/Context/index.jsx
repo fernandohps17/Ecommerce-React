@@ -30,6 +30,9 @@ export const ShoppingCartProvider = ({ children }) => {
     // Get Products
     const [items, setItems] = useState(null)
 
+    // Filtrado por titulos
+    const [filteredItems, setFilteredItems] = useState(null)
+
     // Get Products By Title
     const [searchByTitle, setSearchByTitle] = useState(null)
 
@@ -38,6 +41,15 @@ export const ShoppingCartProvider = ({ children }) => {
             .then(response => response.json())
             .then(data => setItems(data))
     }, [])
+
+    // Funcion para fitrar por titulo
+    const filteredItemsByTitle = (items, searchByTitle) => {
+        return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLowerCase()))
+    }
+
+    useEffect(() => {
+        if (searchByTitle) setFilteredItems(filteredItemsByTitle(items, searchByTitle))
+    }, [items, searchByTitle])
 
     return (
         <ShoppingCartContext.Provider value={{
@@ -60,7 +72,8 @@ export const ShoppingCartProvider = ({ children }) => {
             setItems,
             searchByTitle,
             setSearchByTitle,
-
+            filteredItems,
+            
         }}>
             {children}
         </ShoppingCartContext.Provider>

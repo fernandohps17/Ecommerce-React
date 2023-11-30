@@ -1,20 +1,27 @@
 .card_grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
     margin: 70px 0;
+    padding: 0 180px;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
+    // gap: 20px;
+    // margin: 70px 0;
 
-    @media screen and (max-width: 1550px) {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+    // @media screen and (max-width: 1550px) {
+    //     grid-template-columns: 1fr 1fr 1fr;
+    // }
 
-    @media screen and (max-width: 1150px) {
-        grid-template-columns: 1fr 1fr;
-    }
+    // @media screen and (max-width: 1150px) {
+    //     grid-template-columns: 1fr 1fr;
+    // }
 
-    @media screen and (max-width: 800px) {
-        grid-template-columns: 1fr;
-    }
+    // @media screen and (max-width: 800px) {
+    //     grid-template-columns: 1fr;
+    // }
 }
 
 .home {
@@ -28,4 +35,8 @@
     border: 1px solid #c1c1c1;
     width: 400px;
     outline: none;
+}
+
+.mensaje {
+    font-size: 20px;
 }
