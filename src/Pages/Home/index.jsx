@@ -1,5 +1,5 @@
 // Import dependecias de React
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { useEffect } from "react"
 
 // Import Component
@@ -9,25 +9,22 @@ import { Card } from "../../Components/Card"
 // Import CSS
 import './style.scss';
 import { ProductDetail } from "../../Components/ProductDetail";
+import { ShoppingCartContext } from "../../Context";
 
 export const Home = () => {
 
-    const [items, setItems] = useState(null)
-
-    useEffect(() => {
-        fetch('https://api.escuelajs.co/api/v1/products')
-            .then(response => response.json())
-            .then(data => setItems(data))
-    }, [])
+    const context = useContext(ShoppingCartContext)
 
     return (
         <div>
-
             <Layout>
-                <h1 className="title">HOME</h1>
+                <div className="home">
+                    <h1 className="title">Exclusive Products</h1>
+                    <input className="input" type="text" placeholder="Search a Product" onChange={(event) => context.setSearchByTitle(event.target.value)}/>
+                </div>
                 <div className="card_grid">
                     {
-                        items?.map(item => (
+                        context.items?.map(item => (
                             <Card data={item} key={item.id} />
                         ))
                     }
@@ -37,3 +34,5 @@ export const Home = () => {
         </div>
     )
 }
+
+// clase 27

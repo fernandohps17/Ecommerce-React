@@ -16,3 +16,16 @@
         grid-template-columns: 1fr;
     }
 }
+
+.home {
+    display: grid;
+    gap: 20px;
+}
+
+.input {
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #c1c1c1;
+    width: 400px;
+    outline: none;
+}
